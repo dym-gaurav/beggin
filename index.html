@@ -79,6 +79,31 @@
     .hidden {
         display: none !important;
     }
+
+    /* --- BUTTON STYLES --- */
+    #controls {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+        z-index: 101;
+    }
+
+    button {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
 </style>
 </head>
 <body>
@@ -87,6 +112,11 @@
     <div id="progress-bar">
         <div id="progress-fill"></div>
     </div>
+</div>
+
+<div id="controls">
+    <button id="fullscreen-btn">Fullscreen</button>
+    <button id="play-btn">Play</button>
 </div>
 
 <div id="visualizer-container">
@@ -98,15 +128,32 @@ const sentenceDisplay = document.getElementById('sentence-display');
 const loading = document.getElementById('loading');
 const progressFill = document.getElementById('progress-fill');
 const body = document.body;
+const fullscreenBtn = document.getElementById('fullscreen-btn');
+const playBtn = document.getElementById('play-btn');
+const controls = document.getElementById('controls');
 
 const audio = new Audio('track.mp3');
 let isPlaying = false;
 let animationId = null;
 let preparedSentences = [];
-let lastWordIndex = -1; // track last word to detect change
-let colorToggle = false; // toggle between black/white
+let lastWordIndex = -1; 
+let colorToggle = false; 
 
-// Toggle play/pause with spacebar
+// --- BUTTON HANDLERS --- //
+fullscreenBtn.addEventListener('click', async () => {
+    if (!document.fullscreenElement) {
+        await document.documentElement.requestFullscreen();
+    } else {
+        await document.exitFullscreen();
+    }
+    controls.classList.add('hidden'); // hide buttons
+});
+
+playBtn.addEventListener('click', () => {
+    playAudio();
+    controls.classList.add('hidden'); // hide buttons
+});
+
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
         e.preventDefault();
@@ -114,14 +161,18 @@ document.addEventListener('keydown', (e) => {
             audio.pause();
             isPlaying = false;
         } else {
-            audio.play();
-            isPlaying = true;
-            updateDisplay();
+            playAudio();
         }
     }
 });
 
-// Initialize
+function playAudio() {
+    audio.play();
+    isPlaying = true;
+    updateDisplay();
+}
+
+// --- INIT --- //
 async function init() {
     try {
         const response = await fetch('data.json');
@@ -136,7 +187,6 @@ async function init() {
             };
         });
 
-        // Track loading progress
         audio.addEventListener('progress', () => {
             if (audio.buffered.length > 0) {
                 const percent = (audio.buffered.end(0) / audio.duration) * 100;
@@ -146,9 +196,6 @@ async function init() {
 
         audio.addEventListener('canplaythrough', () => {
             loading.classList.add('hidden');
-            audio.play();
-            isPlaying = true;
-            updateDisplay();
         });
 
         audio.addEventListener('error', () => {
@@ -188,7 +235,6 @@ function updateDisplay() {
     }
 
     if (currentSentence && currentWordIndex >= 0) {
-        // Toggle colors if a new word is displayed
         if (currentWordIndex !== lastWordIndex) {
             colorToggle = !colorToggle;
             body.style.backgroundColor = colorToggle ? 'white' : 'black';
