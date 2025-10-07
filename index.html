@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentence Visualizer</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: black;
+        color: white;
+        overflow: hidden;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Quivert', Arial, sans-serif;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    @font-face {
+        font-family: 'Quivert';
+        src: url('quivert.ttf') format('truetype');
+    }
+
+    #visualizer-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    #sentence-display {
+        font-size: 98px;
+        max-width: 90%;
+        line-height: 1.4;
+        transition: color 0.2s ease;
+    }
+
+    #loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        font-size: 24px;
+    }
+
+    #progress-bar {
+        width: 60%;
+        height: 20px;
+        background-color: #444;
+        margin-top: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    #progress-fill {
+        width: 0%;
+        height: 100%;
+        background-color: #00ff00;
+        transition: width 0.1s linear;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+</style>
+</head>
+<body>
+<div id="loading">
+    <p>Loading audio and transcript...</p>
+    <div id="progress-bar">
+        <div id="progress-fill"></div>
+    </div>
+</div>
+
+<div id="visualizer-container">
+    <div id="sentence-display"></div>
+</div>
+
+<script>
+const sentenceDisplay = document.getElementById('sentence-display');
+const loading = document.getElementById('loading');
+const progressFill = document.getElementById('progress-fill');
+const body = document.body;
+
+const audio = new Audio('track.mp3');
+let isPlaying = false;
+let animationId = null;
+let preparedSentences = [];
+let lastWordIndex = -1; // track last word to detect change
+let colorToggle = false; // toggle between black/white
+
+// Toggle play/pause with spacebar
+document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space') {
+        e.preventDefault();
+        if (isPlaying) {
+            audio.pause();
+            isPlaying = false;
+        } else {
+            audio.play();
+            isPlaying = true;
+            updateDisplay();
+        }
+    }
+});
+
+// Initialize
+async function init() {
+    try {
+        const response = await fetch('data.json');
+        const sentences = await response.json();
+        preparedSentences = sentences.map(entry => {
+            const words = entry.sentence.split(' ');
+            return {
+                words: words,
+                start: entry.start,
+                end: entry.end,
+                duration: entry.duration
+            };
+        });
+
+        // Track loading progress
+        audio.addEventListener('progress', () => {
+            if (audio.buffered.length > 0) {
+                const percent = (audio.buffered.end(0) / audio.duration) * 100;
+                progressFill.style.width = percent + '%';
+            }
+        });
+
+        audio.addEventListener('canplaythrough', () => {
+            loading.classList.add('hidden');
+            audio.play();
+            isPlaying = true;
+            updateDisplay();
+        });
+
+        audio.addEventListener('error', () => {
+            loading.innerHTML = '<p>Error loading audio. Please check if track.mp3 exists.</p>';
+        });
+
+        audio.load();
+
+    } catch (error) {
+        console.error('Error loading data:', error);
+        loading.innerHTML = '<p>Error loading audio or transcript. Please check if track.mp3 and data.json exist.</p>';
+    }
+}
+
+function updateDisplay() {
+    if (!isPlaying) return;
+    const currentTime = audio.currentTime;
+    let currentSentence = null;
+    let currentWordIndex = -1;
+
+    for (const sentence of preparedSentences) {
+        if (currentTime >= sentence.start && currentTime <= sentence.end) {
+            currentSentence = sentence;
+            const numWords = sentence.words.length;
+            const wordDuration = sentence.duration / numWords;
+
+            for (let i = 0; i < numWords; i++) {
+                const wordStart = sentence.start + i * wordDuration;
+                const wordEnd = wordStart + wordDuration;
+                if (currentTime >= wordStart && currentTime <= wordEnd) {
+                    currentWordIndex = i;
+                    break;
+                }
+            }
+            break;
+        }
+    }
+
+    if (currentSentence && currentWordIndex >= 0) {
+        // Toggle colors if a new word is displayed
+        if (currentWordIndex !== lastWordIndex) {
+            colorToggle = !colorToggle;
+            body.style.backgroundColor = colorToggle ? 'white' : 'black';
+            sentenceDisplay.style.color = colorToggle ? 'black' : 'white';
+            lastWordIndex = currentWordIndex;
+        }
+
+        const sentenceText = currentSentence.words.slice(0, currentWordIndex + 1).join(' ');
+        sentenceDisplay.textContent = sentenceText;
+    } else {
+        sentenceDisplay.textContent = '';
+    }
+
+    animationId = requestAnimationFrame(updateDisplay);
+}
+
+init();
+</script>
+</body>
+</html>
