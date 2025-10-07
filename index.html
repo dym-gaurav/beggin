@@ -81,28 +81,31 @@
     }
 
     /* --- BUTTON STYLES --- */
-    #controls {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        display: flex;
-        gap: 10px;
-        z-index: 101;
-    }
-
-    button {
-        background-color: rgba(255, 255, 255, 0.1);
-        color: white;
-        border: 1px solid white;
-        padding: 10px 20px;
-        border-radius: 10px;
-        font-size: 18px;
+    .control-button {
+        position: fixed;
+        bottom: 40px;
+        padding: 12px 24px;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: black;
+        font-size: 20px;
+        border: none;
+        border-radius: 12px;
         cursor: pointer;
-        transition: background-color 0.2s ease;
+        z-index: 200;
+        transition: transform 0.2s ease, background-color 0.2s ease;
     }
 
-    button:hover {
-        background-color: rgba(255, 255, 255, 0.3);
+    .control-button:hover {
+        transform: scale(1.05);
+        background-color: white;
+    }
+
+    #play-button {
+        left: 40px;
+    }
+
+    #fullscreen-button {
+        right: 40px;
     }
 </style>
 </head>
@@ -114,10 +117,9 @@
     </div>
 </div>
 
-<div id="controls">
-    <button id="fullscreen-btn">Fullscreen</button>
-    <button id="play-btn">Play</button>
-</div>
+<!-- Control Buttons -->
+<button id="play-button" class="control-button">Play</button>
+<button id="fullscreen-button" class="control-button">Fullscreen</button>
 
 <div id="visualizer-container">
     <div id="sentence-display"></div>
@@ -128,32 +130,35 @@ const sentenceDisplay = document.getElementById('sentence-display');
 const loading = document.getElementById('loading');
 const progressFill = document.getElementById('progress-fill');
 const body = document.body;
-const fullscreenBtn = document.getElementById('fullscreen-btn');
-const playBtn = document.getElementById('play-btn');
-const controls = document.getElementById('controls');
+
+const playButton = document.getElementById('play-button');
+const fullscreenButton = document.getElementById('fullscreen-button');
 
 const audio = new Audio('track.mp3');
 let isPlaying = false;
 let animationId = null;
 let preparedSentences = [];
-let lastWordIndex = -1; 
-let colorToggle = false; 
+let lastWordIndex = -1;
+let colorToggle = false;
 
-// --- BUTTON HANDLERS --- //
-fullscreenBtn.addEventListener('click', async () => {
+// PLAY BUTTON (click once)
+playButton.addEventListener('click', () => {
+    if (isPlaying) return; // prevent multiple clicks
+    playButton.classList.add('hidden');
+    audio.play();
+    isPlaying = true;
+    updateDisplay();
+});
+
+// FULLSCREEN BUTTON (click once)
+fullscreenButton.addEventListener('click', async () => {
+    fullscreenButton.classList.add('hidden');
     if (!document.fullscreenElement) {
         await document.documentElement.requestFullscreen();
-    } else {
-        await document.exitFullscreen();
     }
-    controls.classList.add('hidden'); // hide buttons
 });
 
-playBtn.addEventListener('click', () => {
-    playAudio();
-    controls.classList.add('hidden'); // hide buttons
-});
-
+// SPACEBAR toggles pause/play (optional)
 document.addEventListener('keydown', (e) => {
     if (e.code === 'Space') {
         e.preventDefault();
@@ -161,18 +166,14 @@ document.addEventListener('keydown', (e) => {
             audio.pause();
             isPlaying = false;
         } else {
-            playAudio();
+            audio.play();
+            isPlaying = true;
+            updateDisplay();
         }
     }
 });
 
-function playAudio() {
-    audio.play();
-    isPlaying = true;
-    updateDisplay();
-}
-
-// --- INIT --- //
+// Initialize
 async function init() {
     try {
         const response = await fetch('data.json');
@@ -188,7 +189,7 @@ async function init() {
         });
 
         audio.addEventListener('progress', () => {
-            if (audio.buffered.length > 0) {
+            if (audio.buffered.length > 0 && audio.duration > 0) {
                 const percent = (audio.buffered.end(0) / audio.duration) * 100;
                 progressFill.style.width = percent + '%';
             }
@@ -241,7 +242,6 @@ function updateDisplay() {
             sentenceDisplay.style.color = colorToggle ? 'black' : 'white';
             lastWordIndex = currentWordIndex;
         }
-
         const sentenceText = currentSentence.words.slice(0, currentWordIndex + 1).join(' ');
         sentenceDisplay.textContent = sentenceText;
     } else {
