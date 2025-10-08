@@ -1,248 +1,224 @@
 [
     {
-        "word": "I'm going to be dead in my eyes",
-        "start": 8.0,
-        "end": 11.5,
-        "duration": 3.5
+        "sentence": "I just wanna feel alive",
+        "start": 14.56,
+        "end": 19.84,
+        "duration": 5.28
     },
     {
-        "word": "till the day that I die",
-        "start": 11.5,
-        "end": 13.8,
-        "duration": 2.3
+        "sentence": "Fell in love, but it left me lonely",
+        "start": 19.84,
+        "end": 22.92,
+        "duration": 3.08
     },
     {
-        "word": "I just want to feel alive",
-        "start": 13.8,
-        "end": 16.2,
-        "duration": 2.4
+        "sentence": "Tried to trust, but it burned me slowly",
+        "start": 22.92,
+        "end": 26.62,
+        "duration": 3.7
     },
     {
-        "word": "with you I'm alive",
-        "start": 16.2,
-        "end": 19.0,
+        "sentence": "I didn't know what I was looking for",
+        "start": 26.62,
+        "end": 30.03,
+        "duration": 3.41
+    },
+    {
+        "sentence": "'Til I found her",
+        "start": 30.56,
+        "end": 37.08,
+        "duration": 6.52
+    },
+    {
+        "sentence": "I found her",
+        "start": 38.16,
+        "end": 40.4,
+        "duration": 2.24
+    },
+    {
+        "sentence": "Without her I'm a mess",
+        "start": 45.84,
+        "end": 50.48,
+        "duration": 4.64
+    },
+    {
+        "sentence": "There was nothing 'bout that love that made sense, I was stressed",
+        "start": 50.48,
+        "end": 53.86,
+        "duration": 3.38
+    },
+    {
+        "sentence": "'Til I found her",
+        "start": 53.86,
+        "end": 59.66,
+        "duration": 5.8
+    },
+    {
+        "sentence": "I've run for many miles trying to find love",
+        "start": 59.66,
+        "end": 62.8,
+        "duration": 3.14
+    },
+    {
+        "sentence": "From a woman that could love me and never leave my side",
+        "start": 62.8,
+        "end": 66.34,
+        "duration": 3.54
+    },
+    {
+        "sentence": "And I've run for many miles trying to get away from",
+        "start": 66.34,
+        "end": 71.62,
+        "duration": 5.28
+    },
+    {
+        "sentence": "The things I'm afraid of and everything inside",
+        "start": 71.62,
+        "end": 73.08,
+        "duration": 1.46
+    },
+    {
+        "sentence": "You say that we're already done",
+        "start": 73.64,
+        "end": 75.28,
+        "duration": 1.64
+    },
+    {
+        "sentence": "But what does that even mean?",
+        "start": 75.28,
+        "end": 76.9,
+        "duration": 1.62
+    },
+    {
+        "sentence": "You tell me to open my eyes",
+        "start": 77.24,
+        "end": 78.88,
+        "duration": 1.64
+    },
+    {
+        "sentence": "Thank God it was just a dream",
+        "start": 78.88,
+        "end": 80.14,
+        "duration": 1.26
+    },
+    {
+        "sentence": "I guess that's how you know that it's love",
+        "start": 80.14,
+        "end": 81.94,
+        "duration": 1.8
+    },
+    {
+        "sentence": "When you're scared to death they'll leave",
+        "start": 81.94,
+        "end": 83.4,
+        "duration": 1.46
+    },
+    {
+        "sentence": "Just say that you'll never leave, never leave",
+        "start": 83.4,
+        "end": 86.04,
+        "duration": 2.64
+    },
+    {
+        "sentence": "look me dead in my eyes",
+        "start": 86.04,
+        "end": 87.84,
+        "duration": 1.8
+    },
+    {
+        "sentence": "'til the day that I die",
+        "start": 88.46,
+        "end": 90.94,
+        "duration": 2.48
+    },
+    {
+        "sentence": "I just wanna feel alive",
+        "start": 91.76,
+        "end": 93.42,
+        "duration": 1.66
+    },
+    {
+        "sentence": "With you, I'm alive",
+        "start": 94.82,
+        "end": 98.78,
+        "duration": 3.96
+    },
+    {
+        "sentence": "Fell in love, but it left me lonely",
+        "start": 101.04,
+        "end": 103.06,
+        "duration": 2.02
+    },
+    {
+        "sentence": "Tried to trust, but it burned me slowly",
+        "start": 103.06,
+        "end": 106.76,
+        "duration": 3.7
+    },
+    {
+        "sentence": "I didn't know what I was looking for",
+        "start": 106.76,
+        "end": 110.5,
+        "duration": 3.74
+    },
+    {
+        "sentence": "'Til I found her",
+        "start": 110.5,
+        "end": 115.46,
+        "duration": 4.96
+    },
+    {
+        "sentence": "I found her",
+        "start": 118.43,
+        "end": 120.36,
+        "duration": 1.93
+    },
+    {
+        "sentence": "Without her I'm a mess",
+        "start": 124.58,
+        "end": 127.3,
+        "duration": 2.72
+    },
+    {
+        "sentence": "There was nothing 'bout that love that made sense, I was stressed",
+        "start": 127.3,
+        "end": 130.24,
+        "duration": 2.94
+    },
+    {
+        "sentence": "'Til we found her",
+        "start": 130.24,
+        "end": 133.66,
+        "duration": 3.42
+    },
+    {
+        "sentence": "Without her I'm a mess",
+        "start": 138.5,
+        "end": 140.7,
+        "duration": 2.2
+    },
+    {
+        "sentence": "There was nothing 'bout that love that made sense, I was stressed",
+        "start": 140.7,
+        "end": 143.72,
+        "duration": 3.02
+    },
+    {
+        "sentence": "'Til I found her",
+        "start": 143.72,
+        "end": 147.32,
+        "duration": 3.6
+    },
+    {
+        "sentence": "'Til I found her",
+        "start": 150.52,
+        "end": 153.34,
+        "duration": 2.82
+    },
+    {
+        "sentence": "'Til I found her",
+        "start": 167.7,
+        "end": 170.5,
         "duration": 2.8
-    },
-    {
-        "word": "I fell in love but it left me lonely",
-        "start": 20.0,
-        "end": 23.0,
-        "duration": 3.0
-    },
-    {
-        "word": "trying to trust but it burned me slowly",
-        "start": 23.0,
-        "end": 25.5,
-        "duration": 2.5
-    },
-    {
-        "word": "I didn't know what I was looking for",
-        "start": 25.5,
-        "end": 28.0,
-        "duration": 2.5
-    },
-    {
-        "word": "till I found her",
-        "start": 28.0,
-        "end": 29.5,
-        "duration": 1.5
-    },
-    {
-        "word": "I found her",
-        "start": 29.5,
-        "end": 30.5,
-        "duration": 1.0
-    },
-    {
-        "word": "without you I'm a mess",
-        "start": 30.5,
-        "end": 32.5,
-        "duration": 2.0
-    },
-    {
-        "word": "there was nothing about that love that made sense I was stressed",
-        "start": 32.5,
-        "end": 38.0,
-        "duration": 5.5
-    },
-    {
-        "word": "till I found her",
-        "start": 38.0,
-        "end": 40.0,
-        "duration": 2.0
-    },
-    {
-        "word": "I've run for many miles trying to find love",
-        "start": 48.0,
-        "end": 52.0,
-        "duration": 4.0
-    },
-    {
-        "word": "from a woman that could love me and never leave my side",
-        "start": 52.0,
-        "end": 57.0,
-        "duration": 5.0
-    },
-    {
-        "word": "I've run for many miles trying to get away from",
-        "start": 57.0,
-        "end": 61.0,
-        "duration": 4.0
-    },
-    {
-        "word": "the things I'm afraid of and everything inside",
-        "start": 61.0,
-        "end": 65.0,
-        "duration": 4.0
-    },
-    {
-        "word": "you say that we're already done",
-        "start": 65.0,
-        "end": 67.5,
-        "duration": 2.5
-    },
-    {
-        "word": "but what does that even mean",
-        "start": 67.5,
-        "end": 69.5,
-        "duration": 2.0
-    },
-    {
-        "word": "you tell me to open my eyes",
-        "start": 69.5,
-        "end": 71.5,
-        "duration": 2.0
-    },
-    {
-        "word": "you got to wish this a dream",
-        "start": 71.5,
-        "end": 73.5,
-        "duration": 2.0
-    },
-    {
-        "word": "I guess that's how you know that it's love",
-        "start": 73.5,
-        "end": 76.0,
-        "duration": 2.5
-    },
-    {
-        "word": "when you're scared of death or leave",
-        "start": 76.0,
-        "end": 78.5,
-        "duration": 2.5
-    },
-    {
-        "word": "you say that you'll never leave never leave",
-        "start": 78.5,
-        "end": 82.0,
-        "duration": 3.5
-    },
-    {
-        "word": "baby hold me close",
-        "start": 82.0,
-        "end": 84.0,
-        "duration": 2.0
-    },
-    {
-        "word": "I'm going to be dead in my eyes dead in my eyes",
-        "start": 84.0,
-        "end": 88.0,
-        "duration": 4.0
-    },
-    {
-        "word": "till the day that I die",
-        "start": 88.0,
-        "end": 90.0,
-        "duration": 2.0
-    },
-    {
-        "word": "dead in my eyes",
-        "start": 90.0,
-        "end": 91.5,
-        "duration": 1.5
-    },
-    {
-        "word": "I just want to feel alive",
-        "start": 91.5,
-        "end": 93.5,
-        "duration": 2.0
-    },
-    {
-        "word": "with you I'm alive",
-        "start": 93.5,
-        "end": 95.0,
-        "duration": 1.5
-    },
-    {
-        "word": "with you I'm alive",
-        "start": 95.0,
-        "end": 96.5,
-        "duration": 1.5
-    },
-    {
-        "word": "Fell in love but it left me lonely",
-        "start": 96.5,
-        "end": 99.0,
-        "duration": 2.5
-    },
-    {
-        "word": "trying to trust but it burned me slowly",
-        "start": 99.0,
-        "end": 101.5,
-        "duration": 2.5
-    },
-    {
-        "word": "I didn't know what I was looking for",
-        "start": 101.5,
-        "end": 104.0,
-        "duration": 2.5
-    },
-    {
-        "word": "till I found her",
-        "start": 104.0,
-        "end": 105.5,
-        "duration": 1.5
-    },
-    {
-        "word": "I found her",
-        "start": 105.5,
-        "end": 106.5,
-        "duration": 1.0
-    },
-    {
-        "word": "without you I'm a mess",
-        "start": 106.5,
-        "end": 108.5,
-        "duration": 2.0
-    },
-    {
-        "word": "there was nothing about that love that made sense I'm a mess",
-        "start": 108.5,
-        "end": 114.0,
-        "duration": 5.5
-    },
-    {
-        "word": "till I found her",
-        "start": 114.0,
-        "end": 116.0,
-        "duration": 2.0
-    },
-    {
-        "word": "without you I'm a mess",
-        "start": 116.0,
-        "end": 118.0,
-        "duration": 2.0
-    },
-    {
-        "word": "there was nothing about that love that made sense I'm a mess",
-        "start": 118.0,
-        "end": 124.0,
-        "duration": 6.0
-    },
-    {
-        "word": "till I found her",
-        "start": 124.0,
-        "end": 126.0,
-        "duration": 2.0
     }
 ]
