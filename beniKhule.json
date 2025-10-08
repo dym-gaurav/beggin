@@ -1,212 +1,116 @@
 [
     {
-        "sentence": "Jokhon matata unna dao (dao, dao, dao, dao)",
+        "sentence": "Jokhon matata unna dao",
         "start": 9.16,
-        "end": 20.02,
-        "duration": 10.86
+        "end": 16.9,
+        "duration": 7.74
     },
     {
         "sentence": "Lage fura khoyna",
-        "start": 20.02,
-        "end": 25.04,
-        "duration": 5.02
+        "start": 16.9,
+        "end": 22.56,
+        "duration": 5.66
     },
     {
         "sentence": "Baby, be my bou",
-        "start": 25.04,
-        "end": 30.98,
-        "duration": 5.94
+        "start": 22.56,
+        "end": 27.32,
+        "duration": 4.76
     },
     {
         "sentence": "Shorom tumi fayo na go",
-        "start": 30.98,
-        "end": 35.16,
-        "duration": 4.18
+        "start": 27.32,
+        "end": 34.9,
+        "duration": 7.58
     },
     {
         "sentence": "Tumi chaile, we can keep it on the low",
-        "start": 35.16,
-        "end": 40.38,
-        "duration": 5.22
+        "start": 34.9,
+        "end": 45.58,
+        "duration": 10.68
     },
     {
         "sentence": "Baby, tomar lagi kita na fari, yeah",
-        "start": 40.38,
-        "end": 45.58,
-        "duration": 5.2
+        "start": 45.58,
+        "end": 56.18,
+        "duration": 10.6
     },
     {
         "sentence": "Baby, tomar lagi kita na khori, yeah",
-        "start": 45.58,
-        "end": 50.52,
-        "duration": 4.94
+        "start": 56.18,
+        "end": 66.88,
+        "duration": 10.7
     },
     {
         "sentence": "You just say it and it happens",
-        "start": 50.52,
-        "end": 55.38,
-        "duration": 4.86
+        "start": 66.88,
+        "end": 77.92,
+        "duration": 11.04
     },
     {
         "sentence": "No baby, no man's ain't cappin'",
-        "start": 55.38,
-        "end": 60.48,
-        "duration": 5.1
+        "start": 77.92,
+        "end": 86.16,
+        "duration": 8.24
     },
     {
         "sentence": "Fly Emirates, we be mappin'",
-        "start": 60.48,
-        "end": 65.0,
-        "duration": 4.52
+        "start": 86.16,
+        "end": 95.42,
+        "duration": 9.26
     },
     {
         "sentence": "Halal money, no man's ain't trappin', yeah",
-        "start": 65.0,
-        "end": 70.46,
-        "duration": 5.46
+        "start": 95.42,
+        "end": 109.46,
+        "duration": 14.04
     },
     {
         "sentence": "Oi beni khule, elo chule",
-        "start": 70.46,
-        "end": 75.02,
-        "duration": 4.56
+        "start": 109.46,
+        "end": 119.36,
+        "duration": 9.9
     },
     {
         "sentence": "Asho jokhon dekhi",
-        "start": 75.02,
-        "end": 78.59,
-        "duration": 3.57
+        "start": 119.36,
+        "end": 123.66,
+        "duration": 4.3
     },
     {
         "sentence": "Ei poran jure daika chole",
-        "start": 78.59,
-        "end": 83.26,
-        "duration": 4.67
+        "start": 123.66,
+        "end": 134.84,
+        "duration": 11.18
     },
     {
         "sentence": "Bak-bakum pakhi",
-        "start": 83.26,
-        "end": 88.9,
-        "duration": 5.64
+        "start": 134.84,
+        "end": 144.84,
+        "duration": 10.0
     },
     {
         "sentence": "Oi beni khule, elo chule",
-        "start": 88.9,
-        "end": 95.98,
-        "duration": 7.08
+        "start": 144.84,
+        "end": 157.68,
+        "duration": 12.84
     },
     {
         "sentence": "Asho jokhon dekhi",
-        "start": 95.98,
-        "end": 100.54,
-        "duration": 4.56
-    },
-    {
-        "sentence": "Ei poran jure daika chole",
-        "start": 100.54,
-        "end": 105.92,
-        "duration": 5.38
-    },
-    {
-        "sentence": "Bak-bakum pakhi",
-        "start": 105.92,
-        "end": 111.04,
-        "duration": 5.12
-    },
-    {
-        "sentence": "Oi beni khule",
-        "start": 111.04,
-        "end": 115.56,
-        "duration": 4.52
-    },
-    {
-        "sentence": "Ei poran jure",
-        "start": 115.56,
-        "end": 120.42,
-        "duration": 4.86
-    },
-    {
-        "sentence": "Oi beni khule",
-        "start": 120.42,
-        "end": 125.6,
-        "duration": 5.18
-    },
-    {
-        "sentence": "Ei poran jure",
-        "start": 125.6,
-        "end": 130.0,
-        "duration": 4.4
-    },
-    {
-        "sentence": "Kate na, din kate na",
-        "start": 130.0,
-        "end": 135.0,
-        "duration": 5.0
-    },
-    {
-        "sentence": "Swapne rat jagi, ghum ase na",
-        "start": 135.0,
-        "end": 140.0,
-        "duration": 5.0
-    },
-    {
-        "sentence": "Lage, lage, la-la-la-la-lage ador",
-        "start": 140.0,
-        "end": 145.34,
-        "duration": 5.34
-    },
-    {
-        "sentence": "Agle rakhi, k-k-k-k-kolijar vetor",
-        "start": 145.34,
-        "end": 151.54,
-        "duration": 6.2
-    },
-    {
-        "sentence": "You just say it and it happens",
-        "start": 151.54,
-        "end": 156.36,
-        "duration": 4.82
-    },
-    {
-        "sentence": "No baby, no man's ain't cappin'",
-        "start": 156.36,
-        "end": 161.96,
-        "duration": 5.6
-    },
-    {
-        "sentence": "Fly Emirates, we be mappin'",
-        "start": 161.96,
-        "end": 166.48,
-        "duration": 4.52
-    },
-    {
-        "sentence": "Halal money, no man's ain't trappin', yeah",
-        "start": 166.48,
-        "end": 171.52,
+        "start": 157.68,
+        "end": 162.72,
         "duration": 5.04
     },
     {
-        "sentence": "Oi beni khule, elo chule",
-        "start": 171.52,
-        "end": 176.0,
-        "duration": 4.48
-    },
-    {
-        "sentence": "Asho jokhon dekhi",
-        "start": 176.0,
-        "end": 179.0,
-        "duration": 3.0
-    },
-    {
         "sentence": "Ei poran jure daika chole",
-        "start": 179.0,
-        "end": 182.0,
-        "duration": 3.0
+        "start": 162.72,
+        "end": 171.24,
+        "duration": 8.52
     },
     {
         "sentence": "Bak-bakum pakhi",
-        "start": 182.0,
-        "end": 183.16,
-        "duration": 1.16
+        "start": 171.24,
+        "end": 182.96,
+        "duration": 11.72
     }
 ]
