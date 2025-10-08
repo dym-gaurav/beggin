@@ -238,8 +238,8 @@ function updateDisplay() {
     if (currentSentence && currentWordIndex >= 0) {
         if (currentWordIndex !== lastWordIndex) {
             colorToggle = !colorToggle;
-            body.style.backgroundColor = colorToggle ? 'white' : 'black';
-            sentenceDisplay.style.color = colorToggle ? 'black' : 'white';
+            body.style.backgroundColor = colorToggle ? 'white' : '#91171F';
+            sentenceDisplay.style.color = colorToggle ? '#91171F' : 'white';
             lastWordIndex = currentWordIndex;
         }
         const sentenceText = currentSentence.words.slice(0, currentWordIndex + 1).join(' ');
